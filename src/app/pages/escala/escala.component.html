@@ -25,7 +25,7 @@
       <td>{{ plantao.data }}</td>
       <td>
         {{ plantao.profissional?.nome || 'N/A' }}
-        <span *ngIf="atingiuLimite(plantao)" class="alerta-limite">⚠️ LIMITE ATINGIDO</span>
+        <span *ngIf="atingiuLimite(plantao)" class="alerta-limite">LIMITE ATINGIDO</span>
       </td>
       <td>{{ plantao.turno?.descricao || 'N/A' }}</td>
       <td>{{ getHorasTurno(plantao.turno?.descricao) }}h</td>
