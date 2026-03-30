@@ -1,0 +1,41 @@
+/* Destaque para profissionais que atingiram o limite */
+.limite-atingido {
+  background-color: #ffcccc !important;
+  font-weight: bold;
+}
+
+/* Alerta de limite */
+.alerta-limite {
+  color: #cc0000;
+  font-size: 0.85em;
+  font-weight: bold;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+/* Estilo da tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: left;
+}
+
+table td {
+  padding: 8px;
+}
+
+table tr:hover {
+  background-color: #f9f9f9;
+}
+
+button {
+  padding: 5px 15px;
+  cursor: pointer;
+  margin: 2px;
+}

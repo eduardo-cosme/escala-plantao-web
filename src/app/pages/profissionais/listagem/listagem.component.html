@@ -1,0 +1,37 @@
+<h2>Listagem de Profissionais</h2>
+
+<label>Filtrar por Categoria:</label>
+<select [(ngModel)]="categoriaId">
+  <option value="">Todas</option>
+  <option value="1">Médico</option>
+  <option value="2">Enfermeiro</option>
+  <option value="3">Técnico</option>
+</select>
+
+<button (click)="filtrar()">Filtrar</button>
+<button routerLink="/profissionais/cadastro">Novo Cadastro</button>
+<button routerLink="/">Voltar</button>
+
+<br><br>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Registro (CRM/COREN)</th>
+      <th>Categoria</th>
+      <th>Carga Horária Semanal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of profissionais">
+      <td>{{ p.nome }}</td>
+      <td>{{ p.registro }}</td>
+      <td>{{ p.categoria.descricao }}</td>
+      <td>{{ p.cargaHorariaSemanal }}h</td>
+    </tr>
+    <tr *ngIf="profissionais.length === 0">
+      <td colspan="4" style="text-align: center;">Nenhum profissional encontrado</td>
+    </tr>
+  </tbody>
+</table>

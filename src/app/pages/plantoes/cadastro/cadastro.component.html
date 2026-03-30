@@ -1,0 +1,31 @@
+<h2>Cadastro de Plantão</h2>
+
+<!-- PROFISSIONAL -->
+<label>Profissional:</label><br>
+<select [(ngModel)]="plantao.profissionalId">
+  <option value="0">Selecione</option>
+  <option *ngFor="let p of profissionais" [value]="p.id">
+    {{ p.nome }}
+  </option>
+</select>
+
+<br><br>
+
+<!-- TURNO -->
+<label>Turno:</label><br>
+<select [(ngModel)]="plantao.turnoId">
+  <option value="1">Manhã</option>
+  <option value="2">Tarde</option>
+  <option value="3">Noite</option>
+</select>
+
+<br><br>
+
+<!-- DATA -->
+<label>Data:</label><br>
+<input type="date" [(ngModel)]="plantao.data">
+
+<br><br>
+
+<button (click)="salvar()">Salvar</button>
+<button routerLink="/">Voltar</button>

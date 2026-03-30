@@ -1,0 +1,17 @@
+<h2>Cadastro de Profissional</h2>
+
+<input [(ngModel)]="profissional.nome" placeholder="Nome"><br><br>
+
+<input [(ngModel)]="profissional.registro" placeholder="Registro"><br><br>
+
+<select [(ngModel)]="profissional.categoriaId">
+  <option value="1">Médico</option>
+  <option value="2">Enfermeiro</option>
+  <option value="3">Técnico</option>
+</select><br><br>
+
+<input type="number" [(ngModel)]="profissional.cargaHorariaSemanal" placeholder="Carga horária semanal"><br><br>
+
+<button (click)="salvar()">Salvar</button>
+<button routerLink="/profissionais/listagem">Ver Listagem</button>
+<button routerLink="/">Voltar</button>

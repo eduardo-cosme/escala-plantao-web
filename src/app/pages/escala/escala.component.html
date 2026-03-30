@@ -1,0 +1,37 @@
+<h2>Escala Semanal</h2>
+
+<input type="date" [(ngModel)]="dataInicial">
+<button (click)="buscarEscala()">Buscar</button>
+<button routerLink="/">Voltar</button>
+
+<hr>
+
+<div *ngIf="escala.length === 0">
+  <p>Nenhum plantão encontrado para a semana selecionada.</p>
+</div>
+
+<table border="1" *ngIf="escala.length > 0">
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Profissional</th>
+      <th>Turno</th>
+      <th>Horas</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let plantao of escala" [class.limite-atingido]="atingiuLimite(plantao)">
+      <td>{{ plantao.data }}</td>
+      <td>
+        {{ plantao.profissional?.nome || 'N/A' }}
+        <span *ngIf="atingiuLimite(plantao)" class="alerta-limite">⚠️ LIMITE ATINGIDO</span>
+      </td>
+      <td>{{ plantao.turno?.descricao || 'N/A' }}</td>
+      <td>{{ getHorasTurno(plantao.turno?.descricao) }}h</td>
+      <td>
+        <button (click)="excluir(plantao.id)">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
